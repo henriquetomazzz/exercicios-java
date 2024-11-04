@@ -7,38 +7,38 @@ public class Postagem {
     private LocalDateTime date;
     private String autor;
     private int likes;
-    
+
     public Postagem(String text, LocalDateTime date, String autor){
         this.text = text;
         this.date = date;
         this.autor = autor;
         this.likes = 0;
     }
-    
+
     public String getText(){
         return text;
     }
-    
+
     public void setText(String text){
         this.text = text;
     }
-    
+
     public LocalDateTime getDate(){
         return date;
     }
-    
+
     public void setDate(LocalDateTime date){
         this.date = date;
     }
-    
+
     public String getAutor(){
         return autor;
     }
-    
+
     public void setAutor(String autor){
         this.autor = autor;
     }
-    
+
     public int getlikes(){
         return likes;
     }

@@ -1,4 +1,4 @@
-package java.atividade04;
+package test.java.atividade04;
 
 import static org.junit.jupiter.api.Assertions.*;
 

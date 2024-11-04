@@ -4,12 +4,12 @@ public class ContaBancaria {
     private double saldo;
     private double chequeEspecial;
 
-    public ContaBancaria(double chequeEspecial) {
+    public ContaBancaria(double chequeEspecial){
         this.saldo = 0.0;
         this.chequeEspecial = chequeEspecial;
     }
 
-    public void depositar(double valor) {
+    public void depositar(double valor){
         if (valor > 0) {
             saldo += valor;
         } else {
@@ -17,26 +17,26 @@ public class ContaBancaria {
         }
     }
 
-    public void sacar(double valor) {
-        if (valor <= 0) {
-            throw new IllegalArgumentException("Valor de saque deve ser positivo.");
+    public void sacar(double valor){
+        if (valor <= 0){
+            throw new IllegalThreadStateException("Valor de saque deve ser positivo.");
         }
-        if (valor <= saldo) {
+        if (valor <= saldo){
             saldo -= valor;
-        } else if (valor <= saldo + chequeEspecial) {
+        }else if(valor <= saldo + chequeEspecial){
             double saldoResultante = valor - saldo;
             saldo = 0;
             chequeEspecial -= saldoResultante;
         } else {
-            throw new IllegalArgumentException("Saldo insuficiente, incluindo o cheque especial.");
+            throw new IllegalThreadStateException("Saldo insuficiente, incluindo o cheque especial");
         }
     }
 
-    public double getSaldo() {
+    public double getSaldo(){
         return saldo;
     }
 
-    public double getChequeEspecialDisponivel() {
+    public double getChequeEspecialDisponivel(){
         return chequeEspecial;
     }
 }
