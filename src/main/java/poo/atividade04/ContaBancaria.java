@@ -9,15 +9,14 @@ public class ContaBancaria {
         this.chequeEspecial = chequeEspecial;
     }
 
-    //depositar
     public void depositar(double valor){
-        if (valor > 0){
-            valor += saldo;
-        }else{
-            throw new IllegalArgumentException("Valor de saque deve ser positivo.");
+        if (valor > 0) {
+            saldo += valor;
+        } else {
+            throw new IllegalArgumentException("Valor de depósito deve ser positivo.");
         }
     }
-    //sacar
+
     public void sacar(double valor){
         if (valor <= 0){
             throw new IllegalThreadStateException("Valor de saque deve ser positivo.");
@@ -28,13 +27,15 @@ public class ContaBancaria {
             double saldoResultante = valor - saldo;
             saldo = 0;
             chequeEspecial -= saldoResultante;
-        }else{
+        } else {
             throw new IllegalThreadStateException("Saldo insuficiente, incluindo o cheque especial");
         }
     }
+
     public double getSaldo(){
         return saldo;
     }
+
     public double getChequeEspecialDisponivel(){
         return chequeEspecial;
     }

@@ -1,4 +1,8 @@
+package test.java.atividade04;
+
 import static org.junit.jupiter.api.Assertions.*;
+
+import main.java.poo.atividade04.ContaBancaria;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
